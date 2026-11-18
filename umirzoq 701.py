@@ -5,12 +5,11 @@ import telebot
 from aiohttp import web
 from telebot import types
 
-BOT_TOKEN = os.getenv("9242223047:AAHbw01ytzXuZTN5hbC4zn-qkrOUOg9dXh8", "").strip()
-if not BOT_TOKEN:
-    BOT_TOKEN = input("BotFather bergan YANGI tokenni kiriting: ").strip()
+BOT_TOKEN = "9242223047:AAHbw01ytzXuZTN5hbC4zn-qkrOUOg9dXh8"
 OWNER_CHAT_ID = os.getenv("OWNER_CHAT_ID", "7818782335").strip()
 
 if not BOT_TOKEN or ":" not in BOT_TOKEN:
+
     raise RuntimeError("BOT_TOKEN qatoriga BotFather bergan haqiqiy tokenni kiriting.")
 if not OWNER_CHAT_ID.isdigit():
     raise RuntimeError("OWNER_CHAT_ID qatoriga raqamli chat ID ni kiriting.")
@@ -103,7 +102,6 @@ def submenu_keyboard(options):
 
 def media_keyboard():
     return make_keyboard([[ADD_NOTE_BUTTON, PHONE_BUTTON], [SKIP_BUTTON]])
-
 
 def phone_keyboard():
     return make_keyboard([[SKIP_BUTTON]])
